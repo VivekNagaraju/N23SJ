@@ -46,7 +46,7 @@ public class LoopingStatements {
 		/*
 		int count = 6;
 		while(count>=5) {
-			System.out.println("Hello, world!");
+			System.out.print("Hello, world!");
 			count++;
 		}
 		*/
