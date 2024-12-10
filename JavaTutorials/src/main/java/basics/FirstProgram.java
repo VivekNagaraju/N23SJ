@@ -7,8 +7,9 @@ import oops.PublicClass;
 public class FirstProgram {
 
 	public static void main(String[] args) {
-		System.out.println("Hello iQuest!!");
+		System.out.print("Hello iQuest!!");
 		System.err.println("Hello iQuest!!");
+		System.out.println(true);
 		
 //		HumanBeing obj3= new HumanBeing("Fiza", 16, "Female");
 		
