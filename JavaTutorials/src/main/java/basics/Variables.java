@@ -6,7 +6,7 @@ public class Variables {
 		// One way of defining a variable
 		int a; // declaration
 		int b;
-		a=5;  // initialization
+		a=5;  // initialization // Hard coding
 		b=10;
 		
 		// Another way of defining a variable
