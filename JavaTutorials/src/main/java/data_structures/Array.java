@@ -27,7 +27,13 @@
  * 
  * Advantages: Simple syntax --> Reduces code complexity
  * 
- * Disadvantage: You can't access any element directly using index
+ * Disadvantage or for/ for-each loop: You can't access any element directly using index
+ * 
+ * Disadvantages of an array:
+ * >> Fixed size
+ * >> No way/ Pre--defined methods to add/insert new elements or delete existing elements
+ * >> We can't store different types of data in an array
+ * 
  * 
  * Iteration: accessing elements of a DS one after the other starting from 0th index
  */
