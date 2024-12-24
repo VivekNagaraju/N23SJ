@@ -50,6 +50,7 @@ public class Array {
 		a[4] = 5;
 //		a[5] = 5; // ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
 		
+		
 		int b[];
 		b = new int[5];
 		
