@@ -6,12 +6,14 @@
  * 
  * Size: the number of elements that are stored in a Collection
  * Capacity: the memory allocated for the elements
+ * 
+ * Iterator: Iterator is an object that allows you to traverse elements of a collection
  */
 
 package data_structures;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Iterator;
 
 public class MyArrayList {
 
@@ -51,8 +53,25 @@ public class MyArrayList {
 		for(Integer element : integerAL) {
 			System.out.println(element);
 		}
-		System.out.println("==========For-each method for an arraylist===========");
 		
+		System.out.println("==========For-each method for an arraylist===========");
+		integerAL.forEach(element -> System.out.println(element));
+		
+		System.out.println("==========iterator===========");
+		 Iterator<Integer> iterator = integerAL.iterator();
+		 
+		 while(iterator.hasNext()) {
+			 Integer element = iterator.next();
+			 System.out.println(element);
+		 }
+		 
+		 System.out.println("==========indexOf===========");
+		 System.out.println(integerAL.indexOf(15));
+		 
+		 System.out.println("==========lastIndexOf===========");
+		 System.out.println(integerAL.lastIndexOf(15));
+		 
+		 
 	
 
 	}
