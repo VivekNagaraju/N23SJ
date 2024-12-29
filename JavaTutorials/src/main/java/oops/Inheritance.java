@@ -5,17 +5,20 @@ public class Inheritance {
 	public static void main(String[] args) {
 		System.out.println("--------Grand Father Object---------");
 		GrandFather ajja = new GrandFather("abc");
+//		GrandFather ajja = new GrandFather();
 		ajja.gfmethod();
 		ajja.watch();
 		
 		System.out.println("--------Father Object---------");
 		Father appa = new Father("xyz");
+//		Father appa = new Father();
 		appa.fmethod();
 		appa.gfmethod();
 		appa.watch();
 		
 		System.out.println("--------Child Object------------");
 		Child naanu = new Child("mno");
+//		Child naanu = new Child();
 		naanu.cmethod();
 		naanu.gfmethod();
 		naanu.fmethod();

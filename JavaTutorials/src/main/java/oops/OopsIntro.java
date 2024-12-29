@@ -27,8 +27,8 @@ class HumanBeing {
 	 String name;
 	 int age;
 	 final String gender;
-	public HumanBeing(String inpputname, int inputage, String inputgender) {
-		name=inpputname;
+	public HumanBeing(String inputname, int inputage, String inputgender) {
+		name=inputname;
 		age=inputage;
 		gender=inputgender;
 	}

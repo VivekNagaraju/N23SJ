@@ -8,12 +8,19 @@
  * Capacity: the memory allocated for the elements
  * 
  * Iterator: Iterator is an object that allows you to traverse elements of a collection
+ * 
+ * Assignment:
+ *  1. In a given array list based on user input present the occurrence of an integer
+ *  (How many items an element/ object is present and the positions of it?)
+ *  2. In a given array list based on user input remove an element from all its occurrences.
  */
 
 package data_structures;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
+
 
 public class MyArrayList {
 
@@ -70,8 +77,45 @@ public class MyArrayList {
 		 
 		 System.out.println("==========lastIndexOf===========");
 		 System.out.println(integerAL.lastIndexOf(15));
+		
+		 System.out.println("===================================");
+		 System.out.println("Before removing the element at index 1"+integerAL);
+		 integerAL.remove(1);
+		 System.out.println("After removing the element at index 1"+integerAL);
+		 
+		 System.out.println("Before removing the element 454"+integerAL);
+		 integerAL.remove((Integer)454);
+		 System.out.println("After removing the element 454"+integerAL);
+		 
+		 System.out.println("===================================");
+		 integerAL.add(40);
+		 System.out.println("integerAL:" + integerAL);
+		 System.out.println("integerAL3:" + integerAL3);
+		 ArrayList<Integer> integerAL4 = new ArrayList<Integer>();
+		 integerAL4.add(null);
+		 /*integerAL.removeAll(integerAL4);
+		 System.out.println("integerAL after removing integerAL3:" + integerAL);
+		 
+		 System.out.println("===================================");
+		 integerAL.removeIf(element -> (element%2==0));
+		 System.out.println(integerAL);
+		 
+		 System.out.println("===================================");
+		 integerAL.replaceAll(element -> element+5);
+		 System.out.println(integerAL);*/
+		 
+		 integerAL.retainAll(integerAL3);
+		 integerAL.removeAll(integerAL4);
+		 System.out.println(integerAL);
 		 
 		 
+		 integerAL.sort(Collections.reverseOrder());
+		 System.out.println(integerAL);
+		 
+	
+	
+		 
+	
 	
 
 	}

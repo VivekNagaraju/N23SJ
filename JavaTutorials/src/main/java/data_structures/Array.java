@@ -67,6 +67,8 @@ public class Array {
 		for(double element : d) {
 			System.out.println(element);
 		}
+		
+	
 
 	}
 
