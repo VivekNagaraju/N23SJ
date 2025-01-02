@@ -12,6 +12,7 @@
 package data_structures;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 
 public class MyHashSet {
@@ -47,7 +48,6 @@ public class MyHashSet {
 		for(Integer element : hash_set1) {
 			System.out.println(element);
 		}
-		
 
 	}
 
