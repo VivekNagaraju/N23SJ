@@ -8,10 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class DoubleClick {
+public class DoubleClick2 {
 
 	public static void main(String[] args) {
 		// 1. Launch Chrome Browser
@@ -20,17 +18,15 @@ public class DoubleClick {
 		WebDriver driver = new ChromeDriver(options);
 
 		// 2. Navigate to testing site
-		driver.get("https://testautomationpractice.blogspot.com/");
+		driver.get("https://demo.guru99.com/test/simple_context_menu.html");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 		// 3. Invoking Actions class object
 		Actions actions = new Actions(driver);
-		
+
 		// 4. Double Click
-		Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		WebElement copy_text_btn = driver.findElement(By.xpath("//*[@id=\"HTML10\"]/div[1]/button"));
-		wait.until(c -> copy_text_btn.isEnabled());
-		actions.doubleClick(copy_text_btn).perform();
+		WebElement double_click_btn = driver.findElement(By.xpath("//*[@id=\"authentication\"]/button"));
+		actions.doubleClick(double_click_btn).perform();
 
 	}
 
