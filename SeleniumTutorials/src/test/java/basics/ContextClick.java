@@ -8,11 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class DoubleClick {
+public class ContextClick {
 
 	public static void main(String[] args) {
 		// 1. Launch Chrome Browser
@@ -21,18 +18,15 @@ public class DoubleClick {
 		WebDriver driver = new ChromeDriver(options);
 
 		// 2. Navigate to testing site
-		driver.get("https://testautomationpractice.blogspot.com/");
+		driver.get("https://demo.guru99.com/test/simple_context_menu.html");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
 		// 3. Invoking Actions class object
 		Actions actions = new Actions(driver);
 		
-		// 4. Double Click
-		Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		WebElement copy_text_btn = driver.findElement(By.xpath("//*[@id=\"HTML10\"]/div[1]/button"));
-//		wait.until(c -> copy_text_btn.isEnabled());
-		wait.until(ExpectedConditions.elementToBeClickable(copy_text_btn));
-		actions.doubleClick(copy_text_btn).perform();
+		// 4. Context click
+		WebElement right_click_btn = driver.findElement(By.xpath("//*[@id=\"authentication\"]/span"));
+		actions.contextClick(right_click_btn).perform();
 
 	}
 

@@ -3,16 +3,14 @@ package basics;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class DoubleClick {
+public class KeyboardActions {
 
 	public static void main(String[] args) {
 		// 1. Launch Chrome Browser
@@ -27,12 +25,13 @@ public class DoubleClick {
 		// 3. Invoking Actions class object
 		Actions actions = new Actions(driver);
 		
-		// 4. Double Click
-		Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		WebElement copy_text_btn = driver.findElement(By.xpath("//*[@id=\"HTML10\"]/div[1]/button"));
-//		wait.until(c -> copy_text_btn.isEnabled());
-		wait.until(ExpectedConditions.elementToBeClickable(copy_text_btn));
-		actions.doubleClick(copy_text_btn).perform();
+		// 4. Type "vivek" in uppercase in name field using Shift Key
+		WebElement name_txtbx = driver.findElement(By.id("name"));
+		actions
+		.keyDown(name_txtbx, Keys.SHIFT)
+		.sendKeys("vivek")
+		.keyUp(Keys.SHIFT)
+		.perform();
 
 	}
 

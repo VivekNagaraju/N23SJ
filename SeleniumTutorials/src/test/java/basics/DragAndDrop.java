@@ -8,13 +8,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class DoubleClick {
+public class DragAndDrop {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// 1. Launch Chrome Browser
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("start-maximized");
@@ -27,12 +24,15 @@ public class DoubleClick {
 		// 3. Invoking Actions class object
 		Actions actions = new Actions(driver);
 		
-		// 4. Double Click
-		Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		WebElement copy_text_btn = driver.findElement(By.xpath("//*[@id=\"HTML10\"]/div[1]/button"));
-//		wait.until(c -> copy_text_btn.isEnabled());
-		wait.until(ExpectedConditions.elementToBeClickable(copy_text_btn));
-		actions.doubleClick(copy_text_btn).perform();
+		// 4. Scrolling the page
+		actions.scrollByAmount(0, 1600).perform();
+//		Thread.sleep(5000);
+		
+		// 5. Drag and drop
+		WebElement draggable = driver.findElement(By.id("draggable"));
+		WebElement droppable = driver.findElement(By.id("droppable"));
+//		actions.scrollToElement(droppable).perform();
+		actions.dragAndDrop(draggable, droppable).perform();
 
 	}
 
