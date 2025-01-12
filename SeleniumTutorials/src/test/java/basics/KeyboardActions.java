@@ -32,6 +32,36 @@ public class KeyboardActions {
 		.sendKeys("vivek")
 		.keyUp(Keys.SHIFT)
 		.perform();
+		
+		// 5. Copy text from Field1 to Field2
+		
+		// 5.1 Copying from Field1
+		WebElement field1 = driver.findElement(By.id("field1"));
+		
+		// 5.1.1 Selecting the text in Field1-  Ctrl+a
+		actions
+		.keyDown(field1, Keys.CONTROL)
+		.sendKeys("a")
+		.keyUp(Keys.CONTROL)
+		.perform();
+		
+		// 5.1.2 Copying the text from Field1- Ctrl+c
+		actions
+		.keyDown(Keys.CONTROL)
+		.sendKeys("c")
+		.keyUp(Keys.CONTROL)
+		.perform();
+		
+		
+		// 5.2 Paste to Field2- Ctrl+v
+		WebElement field2 = driver.findElement(By.id("field2"));
+		actions
+		.keyDown(field2, Keys.CONTROL)
+		.sendKeys("v")
+		.keyUp(Keys.CONTROL)
+		.perform();
+		
+		
 
 	}
 
