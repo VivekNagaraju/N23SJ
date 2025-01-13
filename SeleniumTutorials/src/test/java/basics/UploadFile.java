@@ -28,7 +28,20 @@ public class UploadFile {
 		// 3b. Click on Upload Single File button
 		WebElement upload_single__file_btn = driver.findElement(By.xpath("//*[@id=\"singleFileForm\"]/button"));
 		upload_single__file_btn.click();
-
+		
+		// 4. Uploading multiple files
+		WebElement choose_files = driver.findElement(By.xpath("//*[@id=\"multipleFilesInput\"]"));
+		/*
+		 * choose_files.sendKeys("C:\\Users\\admin\\Downloads\\info.txt");
+		 * choose_files.sendKeys("C:\\Users\\admin\\Downloads\\ss264.png");
+		 */
+		
+		choose_files.sendKeys("C:\\Users\\admin\\Downloads\\info.txt"+"\n"+"C:\\Users\\admin\\Downloads\\ss264.png");
+		System.out.println(choose_files.getText());
+		
+		WebElement upload_multiple_files_btn = driver.findElement(By.xpath("//*[@id=\"multipleFilesForm\"]/button"));
+		upload_multiple_files_btn.click();
+				
 	}
 
 }
