@@ -10,19 +10,24 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import driverManager.WebDriverManager;
 import io.cucumber.java.en.*;
+import pageObjects.LoginPage;
 
 public class LoginStepDefinition {
 	
-	WebDriver driver;
+//	WebDriver driver;
 	
-	@Given("chrome browser is launched")
-	public void chrome_browser_is_launched() {
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("start-maximized");
-		driver = new ChromeDriver(options);
-	    
-	}
+	LoginPage loginPage;
+	WebDriver driver = WebDriverManager.getDriver();
+	
+	/*
+	 * @Given("chrome browser is launched") public void chrome_browser_is_launched()
+	 * { ChromeOptions options = new ChromeOptions();
+	 * options.addArguments("start-maximized"); driver = new ChromeDriver(options);
+	 * 
+	 * }
+	 */
 	
 	@Given("user navigated to OrangeHRM Login page")
 	public void user_navigated_to_orange_hrm_login_page() {
@@ -32,20 +37,24 @@ public class LoginStepDefinition {
 	
 	@When("user enters Username")
 	public void user_enters_username() {
-		WebElement username_txtbx = driver.findElement(By.name("username"));
-		username_txtbx.sendKeys("Admin");
+//		WebElement username_txtbx = driver.findElement(By.name("username"));
+//		username_txtbx.sendKeys("Admin");
+		loginPage = new LoginPage(driver);
+		loginPage.enterUserName("Admin");
 	}
 	
 	@When("user enters Password")
 	public void user_enters_password() {
-		WebElement password_txtbx = driver.findElement(By.name("password"));
-		password_txtbx.sendKeys("admin123");
+//		WebElement password_txtbx = driver.findElement(By.name("password"));
+//		password_txtbx.sendKeys("admin123");
+		loginPage.enterPassword("admin123");
 	}
 	
 	@When("user clicks on Login button")
 	public void user_clicks_on_login_button() {
-		WebElement login_btn = driver.findElement(By.tagName("button"));
-		login_btn.click();
+//		WebElement login_btn = driver.findElement(By.tagName("button"));
+//		login_btn.click();
+		loginPage.clickOnLogin();
 	}
 	
 	@Then("user should able to see Dashboard URL")

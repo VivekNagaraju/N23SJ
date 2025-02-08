@@ -16,13 +16,13 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag
+@LoginFeature
 Feature: Login feature scenarios
 
   @tag1
   Scenario: Validate login to OrangeHRM Site with valid credentials
-    Given chrome browser is launched
-    And user navigated to OrangeHRM Login page
+    #Given chrome browser is launched
+    Given user navigated to OrangeHRM Login page
     When user enters Username
     And user enters Password
     And user clicks on Login button
@@ -31,8 +31,8 @@ Feature: Login feature scenarios
     
    @tag2 
    Scenario: Validate login to OrangeHRM with parameters in feature file
-    Given chrome browser is launched
-    And user navigated to OrangeHRM Login page
+    #Given chrome browser is launched
+    Given user navigated to OrangeHRM Login page
     When user enters Username "Admin"
     And user enters Password "admin123"
     And user clicks on Login button
