@@ -22,9 +22,12 @@ public class LoginStepDefinition {
 	WebDriver driver = WebDriverManager.getDriver();
 	
 	/*
-	 * @Given("chrome browser is launched") public void chrome_browser_is_launched()
-	 * { ChromeOptions options = new ChromeOptions();
-	 * options.addArguments("start-maximized"); driver = new ChromeDriver(options);
+	 * @Given("chrome browser is launched") 
+	 * public void chrome_browser_is_launched()
+	 * { 
+	 * ChromeOptions options = new ChromeOptions();
+	 * options.addArguments("start-maximized"); 
+	 * driver = new ChromeDriver(options);
 	 * 
 	 * }
 	 */
@@ -32,7 +35,7 @@ public class LoginStepDefinition {
 	@Given("user navigated to OrangeHRM Login page")
 	public void user_navigated_to_orange_hrm_login_page() {
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	}
 	
 	@When("user enters Username")
@@ -67,14 +70,16 @@ public class LoginStepDefinition {
 	
 	@When("user enters Username {string}")
 	public void user_enters_username(String username) {
-		WebElement username_txtbx = driver.findElement(By.name("username"));
-		username_txtbx.sendKeys(username);
+//		WebElement username_txtbx = driver.findElement(By.name("username"));
+//		username_txtbx.sendKeys(username);
+		loginPage.enterUserName(username);
 	}
 	
 	@When("user enters Password {string}")
 	public void user_enters_password(String password) {
-		WebElement password_txtbx = driver.findElement(By.name("password"));
-		password_txtbx.sendKeys(password);
+//		WebElement password_txtbx = driver.findElement(By.name("password"));
+//		password_txtbx.sendKeys(password);
+		loginPage.enterPassword(password);
 	}
 
 }

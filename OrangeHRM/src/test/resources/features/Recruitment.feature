@@ -20,10 +20,11 @@
 Feature: OrangeHRM Recruitment Feature
 
   Background: Precondition steps for Recruitment Feature
-    Given User navigated to OrangeHRM Login Page
-    When User enters username
-    And User enters password
-    And User clicks on Login button
+    Given user navigated to OrangeHRM Login page
+    When user enters Username
+    And user enters Password
+    And user clicks on Login button
+    
 
   @navigateToRecruitmentModule @TC_RM_001
   Scenario: Validate the Navigation to recruitment module
