@@ -29,3 +29,8 @@ Feature: OrangeHRM Recruitment Feature
   @navigateToRecruitmentModule @TC_RM_001
   Scenario: Validate the Navigation to recruitment module
     When User clicks on Recruitment menu item
+   
+  @navigateToVacanciesTab  
+  Scenario: Validate the navigation to Vacancies tab
+  When User clicks on Recruitment menu item
+  And User clicks on Vacancies Tab

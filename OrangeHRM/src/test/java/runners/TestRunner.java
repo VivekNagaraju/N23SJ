@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 		features="src/test/resources/features",
 		glue="stepDefinitions",
-		tags="@LoginFeature",
+		tags="@navigateToVacanciesTab",
 		plugin = {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 public class TestRunner {
 

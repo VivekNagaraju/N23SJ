@@ -17,5 +17,10 @@ public class RecruitmentStepDefinition {
 	public void user_clicks_on_recruitment_menu_item() {
 		recruitmentPage.clickOnRecruitmentItem();
 	}
+	
+	@When("User clicks on Vacancies Tab")
+	public void user_clicks_on_vacancies_tab() {
+		recruitmentPage.clickOnVacanciesTab();
+	}
 
 }
